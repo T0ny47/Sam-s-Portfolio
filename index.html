@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Samuel Wondmnew | Portfolio</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23888'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3ESW%3C/text%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <canvas id="particles-canvas"></canvas>
+    <canvas id="bg-anim-canvas"></canvas>
+    <div id="bg-overlay"></div>
+
+    <nav>
+        <div class="logo">Welcome</div>
+        <ul id="navMenu">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
+
+    <div id="toast"></div>
+
+    <section id="hero">
+        <p class="greeting"><span>&#10024;</span> Hello, I'm</p>
+        <h1>
+            Samuel<br>
+            <span class="gradient">Wondmnew</span>
+        </h1>
+        <div class="typed-wrap">
+            <span id="typedText"></span><span class="cursor-blink"></span>
+        </div>
+        <div class="cta-group">
+            <a href="#contact" class="btn btn-primary">Let's Talk</a>
+            <a href="#about" class="btn btn-outline">About Me</a>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="line"></div>
+        </div>
+    </section>
+
+    <section id="about">
+        <p class="section-tag reveal">About</p>
+        <h2 class="section-title reveal">Who I Am</h2>
+        <div class="about-text reveal-center">
+            <p>
+                I'm <strong>Samuel Wondmnew</strong>, a graduate in Information Systems from the
+                <strong>University of Gondar</strong>. My academic background in informatics
+                gave me a deep understanding of how technology and data drive smart solutions.
+            </p>
+            <p>
+                Today, I work as a <strong>Web Developer</strong> and
+                <strong>UI/UX App Designer</strong>, crafting digital experiences that are
+                both beautiful and functional. I love turning complex problems into
+                simple, elegant interfaces.
+            </p>
+            <div class="info-grid">
+                <div class="info-item">
+                    <div class="label">Name</div>
+                    <div class="value">Samuel Wondmnew</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Field</div>
+                    <div class="value">Informatics</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Role</div>
+                    <div class="value">Web Dev &amp; UI/UX Designer</div>
+                </div>
+                <div class="info-item">
+                    <div class="label">Alma Mater</div>
+                    <div class="value">University of Gondar</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <p class="section-tag reveal">Skills</p>
+        <h2 class="section-title reveal">What I Do Best</h2>
+        <div class="skills-grid">
+            <div class="skill-card reveal" style="transition-delay:.1s">
+                <div class="icon">&#128187;</div>
+                <h3>Front-end Development</h3>
+                <p>HTML, CSS, JavaScript, React — building responsive and performant interfaces.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="90"></div>
+                </div>
+            </div>
+            <div class="skill-card reveal" style="transition-delay:.2s">
+                <div class="icon">&#128295;</div>
+                <h3>Back-end Development</h3>
+                <p>Node.js, Express, REST APIs — crafting the logic behind the scenes.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="80"></div>
+                </div>
+            </div>
+            <div class="skill-card reveal" style="transition-delay:.3s">
+                <div class="icon">&#127912;</div>
+                <h3>UI/UX Design</h3>
+                <p>Figma, wireframing, prototyping — designing intuitive user journeys.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="85"></div>
+                </div>
+            </div>
+            <div class="skill-card reveal" style="transition-delay:.4s">
+                <div class="icon">&#128202;</div>
+                <h3>Information Systems</h3>
+                <p>Data modeling, systems analysis, bridging business and technology.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="85"></div>
+                </div>
+            </div>
+            <div class="skill-card reveal" style="transition-delay:.5s">
+                <div class="icon">&#128225;</div>
+                <h3>Database Management</h3>
+                <p>SQL, MongoDB — structuring data for reliability and speed.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="75"></div>
+                </div>
+            </div>
+            <div class="skill-card reveal" style="transition-delay:.6s">
+                <div class="icon">&#128640;</div>
+                <h3>Responsive Design</h3>
+                <p>Mobile-first approach, cross-browser compatibility, accessible UI.</p>
+                <div class="skill-bar">
+                    <div class="fill" data-width="90"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <p class="section-tag reveal">Services</p>
+        <h2 class="section-title reveal">How I Can Help</h2>
+        <div class="services-grid">
+            <div class="service-card reveal" style="transition-delay:.1s">
+                <div class="icon">&#127760;</div>
+                <h3>Web Development</h3>
+                <p>From landing pages to full-scale web applications — clean code, fast performance, and pixel-perfect
+                    execution.</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.2s">
+                <div class="icon">&#127912;</div>
+                <h3>UI/UX Design</h3>
+                <p>User-centered designs that look great and feel natural. Wireframes, prototypes, and design systems
+                    included.</p>
+            </div>
+            <div class="service-card reveal" style="transition-delay:.3s">
+                <div class="icon">&#128241;</div>
+                <h3>App Design</h3>
+                <p>Mobile-first UI/UX design for iOS and Android apps. Smooth interactions and intuitive navigation.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <p class="section-tag reveal">Contact</p>
+        <h2 class="section-title reveal">Get In Touch</h2>
+        <div class="contact-grid">
+            <div class="contact-info reveal-left">
+                <h3>Let's work together</h3>
+                <p>Have a project in mind or just want to say hi? I'm always open to discussing new opportunities.</p>
+                <div class="contact-item">
+                    <span class="emoji">&#128231;</span>
+                    <a href="mailto:samuelwondmnew21@gmail.com">samuelwondmnew21@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">&#128205;</span>
+                    <span>Bahir Dar, Ethiopia</span>
+                </div>
+                <div class="contact-item">
+                    <span class="emoji">&#128222;</span>
+                    <span>+251 908407989</span>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/samuel-abate-8084a5420/?skipRedirect=true" target="_blank" aria-label="LinkedIn">in</a>
+                    <a href="https://t.me/Sam_adri_21" target="_blank" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.5 2L2.5 10l7 3 3 7 9-18z"/><path d="M12.5 13L19 7l-6.5 6z"/></svg></a>
+                </div>
+            </div>
+            <form class="reveal-right" id="contactForm">
+                <input type="text" name="name" placeholder="Your Name" class="reveal" style="transition-delay:.1s" required />
+                <input type="email" name="email" placeholder="Your Email" class="reveal" style="transition-delay:.2s" required />
+                <input type="text" name="subject" placeholder="Subject" class="reveal" style="transition-delay:.3s" />
+                <textarea name="message" placeholder="Your Message" class="reveal" style="transition-delay:.4s" required></textarea>
+                <button type="submit" class="btn btn-primary reveal" style="transition-delay:.5s">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Samuel Wondmnew. Built with passion.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
