@@ -8,32 +8,48 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23888'/%3E%3Ctext x='16' y='22' font-family='Arial,sans-serif' font-size='15' font-weight='bold' fill='%23fff' text-anchor='middle'%3ESW%3C/text%3E%3C/svg%3E">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
+    <!-- Welcome Screen -->
+    <div class="welcome-screen" id="welcomeScreen">
+        <div class="welcome-content">
+            <div class="welcome-line welcome-line-1">Hello there</div>
+            <div class="welcome-line welcome-line-2">Welcome to my portfolio</div>
+            <div class="welcome-click" id="welcomeClick">
+                <span class="welcome-click-text">Click here</span>
+                <span class="welcome-click-ring"></span>
+            </div>
+        </div>
+    </div>
+
     <div class="cursor-dot" id="cursorDot"></div>
     <div class="cursor-ring" id="cursorRing"></div>
 
-    <canvas id="particles-canvas"></canvas>
     <canvas id="bg-anim-canvas"></canvas>
     <div id="bg-overlay"></div>
 
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <div class="page-content" id="pageContent">
+
     <nav>
-        <div class="logo">Welcome</div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </div>
         <ul id="navMenu">
             <li><a href="#hero">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#services">Services</a></li>
+
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-        </div>
     </nav>
 
     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">&#9790;</button>
@@ -92,7 +108,6 @@
                     <div class="value">University of Gondar</div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 
@@ -175,6 +190,8 @@
         </div>
     </section>
 
+
+
     <section id="contact">
         <p class="section-tag reveal">Contact</p>
         <h2 class="section-title reveal">Get In Touch</h2>
@@ -183,15 +200,15 @@
                 <h3>Let's work together</h3>
                 <p>Have a project in mind or just want to say hi? I'm always open to discussing new opportunities.</p>
                 <div class="contact-item">
-                    <span class="emoji">&#128231;</span>
+                    <span class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                     <a href="mailto:samuelwondmnew21@gmail.com">samuelwondmnew21@gmail.com</a>
                 </div>
                 <div class="contact-item">
-                    <span class="emoji">&#128205;</span>
+                    <span class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
                     <span>Bahir Dar, Ethiopia</span>
                 </div>
                 <div class="contact-item">
-                    <span class="emoji">&#128222;</span>
+                    <span class="contact-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
                     <span>+251 908407989</span>
                 </div>
                 <div class="social-links">
@@ -209,9 +226,14 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">&#8593;</button>
+
     <footer>
         &copy; 2026 Samuel Wondmnew. Built with passion.
     </footer>
+
+    </div><!-- end page-content -->
 
     <script src="script.js"></script>
 </body>
